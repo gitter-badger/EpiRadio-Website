@@ -1,0 +1,38 @@
+{% block navigation %}
+<div id="header">
+    <nav id="nav" class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="menu-top menu-top-inverse" id="socialbar">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-7 pull-right">
+                <div class="list-inline social-icons-menu-top pull-right">
+                  <a href="https://www.facebook.com/" class="social-hover-v1 a-facebook" target="_blank"></a>
+                  <a href="https://plus.google.com/" class="social-hover-v1 a-google" target="_blank"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+			<a class="navbar-brand" href="{{ path('homepage') }}"><img class="img-responsive brand" src="{{ app.request.basepath }}/media/logo.png" alt="{{ 'Home'|trans }}" /></a>
+          </div>
+
+		<div class="navbar-collapse collapse" id="navbar">
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		  <ul class="nav navbar-nav navbar-right">
+			<a href="{{ path('homepage') }}"><i class="fa fa-home"> Accueil</i></a>
+		  </ul>
+		  </div>
+		  </div>
+	</nav>
+</div>
+{% endblock navigation %}

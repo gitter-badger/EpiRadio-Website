@@ -1,0 +1,28 @@
+{% block tarteaucitron %}
+{% spaceless %}
+{% if app.tarteaucitron is defined and
+      app.tarteaucitron.moduleskeys is defined and
+      app.tarteaucitron.moduleskeys is not empty %}
+<script type="text/javascript"> var tarteaucitronForceLanguage = '{{ app.locale }}';</script>
+<script type='text/javascript'
+	src='{{ app.request.basepath }}/js/libs/tarteaucitron/tarteaucitron.js'>
+	</script>
+<script type='text/javascript'>
+	tarteaucitron.job = [];
+	tarteaucitron.init({ 'hashtag': '{{ app.tarteaucitron.hashtag }}',
+		'highPrivacy': {% if app.tarteaucitron.highprivacy is empty %}false{% else %}true{% endif %},
+		'orientation': '{{ app.tarteaucitron.orientation }}',
+		'adblocker': {% if app.tarteaucitron.adblocker is empty %}false{% else %}true{% endif %},
+		'showAlertSmall': {% if app.tarteaucitron.showalertsmall is empty %}false{% else %}true{% endif %},
+		'cookieslist': {% if app.tarteaucitron.cookieslist is empty %}false{% else %}true{% endif %},
+		'removeCredit': {% if app.tarteaucitron.removecredit is empty %}false{% else %}true{% endif %},
+	});
+	{% for module in app.tarteaucitron.moduleskeys %}
+	  {% if module == "analytics" %}tarteaucitron.user.analyticsUa = '{{ app.tarteaucitron.analyticsUa }}';{% endif %}
+	  {% if module == "googleadwordsremarketing" %}tarteaucitron.user.adwordsremarketingId = '{{ app.tarteaucitron.adwordsremarketingId }}';{% endif %}
+		(tarteaucitron.job = tarteaucitron.job || []).push('{{ module }}');
+	{% endfor %}
+	</script>
+{% endif %}
+{% endspaceless %}
+{% endblock tarteaucitron %}

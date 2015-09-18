@@ -1,0 +1,19 @@
+{% autoescape %}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
+
+	{% for route in routes %}
+	{% set pattern = route.getPattern() %}
+	{% if "{_locale}" not in pattern and "sitemap.xml" not in pattern %}
+	<url>
+		<loc>{{ app.request.SchemeAndHttpHost() }}{{ pattern }}</loc>
+	</url>
+	<url>
+		<loc>{{ app.request.SchemeAndHttpHost() }}{{ pattern }}</loc>
+		<mobile:mobile/>
+	</url>
+	{% endif %}
+    {% endfor %}
+
+</urlset>
+{% endautoescape %}

@@ -1,0 +1,40 @@
+{% use 'head.html.twig' %}
+{% use 'navigation_top.html.twig' %}
+{% use 'javascript.html.twig' %}
+{% use 'footer.html.twig' %}
+
+{% block head %}{{ parent() }}{% endblock head %}
+<body class="{{ page }} {{ app.locale }} body-nav-fixed-menu-top">
+<div class="wrapper-body">
+
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+	{% set active = active|default(null) %}
+
+	{% block navigation %}{{ parent() }}{% endblock navigation %}
+
+	<div class="wrapper-content">
+
+	{% if app.session.getFlashBag.peekAll() is not empty %}
+	<div class="section section-both section-sm section-top">
+     {% set alertTypeAvaillable = [ 'info', 'success', 'warning', 'danger'] %}
+     {% for alert in alertTypeAvaillable %}
+                {% for message in app.session.getFlashBag.get(alert) %}
+                    <div class="panel panel-{{ alert }}">
+        				<div class="panel-heading">
+                        {{ message|trans }}
+                        </div>
+                    </div>
+                {% endfor %}
+     {% endfor %}
+     </div>
+     {% endif %}
+	<div class="section-both section section-sm section-top">
+	{% block content %}
+	{% endblock %}
+	</div>
+	{% block footer %}{{ parent() }}{% endblock footer %}
+	</div>
+</div>
+	{% block javascript %}{{ parent() }}{% endblock javascript %}
+</body>
+</html>

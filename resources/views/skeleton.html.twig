@@ -1,0 +1,22 @@
+{% extends 'layout_top.html.twig' %}
+{% set active = page %}
+{% set lang = app.locale %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+<div class="col-md-12 well well-large">
+	{% block title %}<h1 class='page-header'>{{ page|trans }}</h1>{% endblock title %}
+	  {% block type_1 %}
+	  	<div class="container-fluid">
+	  		<div class="row">
+	  			<div class="col-md-12">
+					<p> TEST </p>
+	  			</div>
+	  		</div>
+	  	</div>
+	  {% endblock type_1 %}
+</div>
+</div>
+</div>
+{% endblock content %}

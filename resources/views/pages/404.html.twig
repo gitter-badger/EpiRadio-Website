@@ -1,0 +1,35 @@
+{% extends 'skeleton.html.twig' %}
+
+{# On renvoie un titre vide pour la 404 #}
+{% block title %}{% endblock %}
+
+{# Contenu mais 404 #}
+{% block type_1 %}
+<div class="container-fluid error404">
+     <article class="wrapper-post">
+	   <div class="wrapper-post-text">
+	   	<h1 class="page-header">Not found <span>:(</span></h1>
+	       <p>Sorry, but the page you were trying to view does not exist.</p>
+	       <p>It looks like this was the result of either:</p>
+	       <ul>
+		   <li>a mistyped address</li>
+		   <li>an out-of-date link</li>
+	       </ul>
+	       <p>Search on google for more results</p>
+	   </div>
+		<div class="wrapper-post-text">
+		<div class="row">
+		<div class="col-md-2"></div>
+	</div>
+	<div>
+		<br /><br />
+		</div>
+	    <script>
+	    var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),
+		GOOG_FIXURL_SITE = location.host;
+	    </script>
+	    <script src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
+	</div>
+     </article>
+</div>
+{% endblock %}
