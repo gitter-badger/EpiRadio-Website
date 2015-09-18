@@ -1,0 +1,68 @@
+{
+	"name" : "EpiRadio - Silex",
+	"type" : "library",
+	"description" : "Site Web EpiRadio",
+	"keywords" : [
+		"framework"
+	],
+	"homepage" : "http://github.com/EpiRadio/EpiRadio-Website",
+	"license" : "GPL",
+	"authors" : [{
+			"name" : "Alexandre Vanhecke",
+			"email" : "alexandre.vanhecke@epitech.eu"
+		}
+	],
+	"require" : {
+		"doctrine/dbal" : "~2.3",
+		"kriswallsmith/assetic" : "1.3.*@dev",
+		"oyejorge/less.php" : "~1.5",
+		"mheap/silex-assetic" : "~1.0",
+		"monolog/monolog" : "~1.6",
+		"silex/silex" : "1.2.5",
+		"symfony/config" : "2.6.*@dev",
+		"symfony/console" : "2.6.*@dev",
+		"symfony/debug" : "2.6.*@dev",
+		"symfony/form" : "2.6.*@dev",
+		"symfony/finder" : "2.6.*@dev",
+		"symfony/filesystem" : "2.6.*@dev",
+		"symfony/intl" : "2.6.*@dev",
+		"symfony/event-dispatcher" : "2.6.*@dev",
+		"symfony/property-access" : "2.6.*@dev",
+		"symfony/security" : "2.6.*@dev",
+		"symfony/translation" : "2.6.*@dev",
+		"symfony/twig-bridge" : "2.6.*@dev",
+		"symfony/validator" : "2.6.*@dev",
+		"symfony/yaml" : "2.6.*@dev",
+		"symfony/stopwatch" : "2.6.*@dev",
+		"symfony/routing" : "2.6.*@dev",
+		"symfony/options-resolver" : "2.6.*@dev",
+		"symfony/http-foundation" : "2.6.*@dev",
+		"symfony/http-kernel" : "2.6.*@dev",
+		"symfony/web-profiler-bundle" : "2.6.*@dev",
+		"symfony/process" : "2.6.*@dev",
+		"twig/twig" : "~1.10",
+		"silex/web-profiler" : "~1.0.1",
+		"twbs/bootstrap" : "3.3.*@dev",
+		"abeautifulsite/simpleimage" : "2.5.*@dev",
+		"kriswallsmith/buzz" : "dev-master",
+		"jasongrimes/silex-simpleuser" : "^2.0",
+		"hybridauth/hybridauth" : "v2.4.1",
+		"patchwork/jsqueeze" : "~2.0",
+		"natxet/cssmin" : "*@dev",
+		"ircmaxell/random-lib" : "^1.1",
+		"asika/sitemap" : "^1.0",
+		"giggsey/libphonenumber-for-php" : "~7.0",
+		"egeloen/google-map" : "1.4.1",
+		"willdurand/geocoder-bundle" : "3.1.0",
+	},
+	"require-dev" : {
+		"symfony/browser-kit" : "~2.3",
+		"symfony/css-selector" : "~2.3",
+		"symfony/dom-crawler" : "~2.3"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"EpiRadio" : "src/"
+		}
+	}
+}
