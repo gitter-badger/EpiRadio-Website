@@ -88,4 +88,6 @@ if (isset($app['assetic.enabled']) && $app['assetic.enabled']) {
   }));
 }
 
+$app->register(new EpiRadio\ServiceProvider\MobileDetectServiceProvider());
+
 return $app;
