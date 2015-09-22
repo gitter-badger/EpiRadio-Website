@@ -90,4 +90,12 @@ if (isset($app['assetic.enabled']) && $app['assetic.enabled']) {
 
 $app->register(new EpiRadio\ServiceProvider\MobileDetectServiceProvider());
 
+// Register Captcha type
+$app['captcha.private_key'] = "API_PRIVATEKEY_HERE";
+$app['captcha.public_key'] = "API_PUBLICKEY_HERE";
+$app['captcha.locale_key'] = $app['locale'];
+$app['captcha.ajax'] = false;
+
+$app->register(new EpiRadio\ServiceProvider\CaptchaServiceProvider());
+
 return $app;
